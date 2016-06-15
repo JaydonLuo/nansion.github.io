@@ -1,3 +1,8 @@
+---
+layout: post
+title:  "The first Blog!"
+quote: 端午节
+---
 # Markdown  从入门----放弃
 ### 导语：
 >写在前面，本文将要指引你入门Markdown，然后指导你放弃者们编辑语言。
