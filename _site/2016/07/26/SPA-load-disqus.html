@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head lang="zh-CN">
+	<meta charset="utf-8">
+	<!--IE=edge使IE启用其所支持的最新的引擎渲染网页，chrome=1激活Chrome Frame.-->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<!-- 可以让部分国产浏览器（目前只有360浏览器）启用高速模式渲染页面 -->
+	<meta name="renderer" content="webkit">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<!-- Color theme for statusbar -->
+	<meta name="theme-color" content="#2196f3">
+	<meta name="author" content="周炳光,bglky">
+	<meta name="copyright" content="周炳光,bglky">
+	<meta name="keywords" content="周炳光,bglky,周炳光的博客,bglky blog,赖柯滢,responsive,blog,framework7,jekyll">
+	<meta name="description" content="1. 动态加载Disqus的embed.js文件">
+	<!-- My Google Search Console -->
+	<meta name="google-site-verification" content="qcNatfyfm9XNpGn-RdTi78hl4nFoFRjfQeG91b-vWnY" />
+	<!-- 360 -->
+	<meta name="360-site-verification" content="3dbe924a9a58b1fbf328fdf13eb74b67" />
+	<!-- sogou -->
+	<meta name="sogou_site_verification" content="ehuZ97HWes"/>
+	
+	
+	
+	<meta name="duoshuo_username" content="bglky">
+	
+	
+	<meta name="ba_track_id" content="3a12295eec4bd436a92e0b39d50f5b31">
+		
+	<link rel="shortcut icon" href="/img/favicon.ico">
+	<title>单页应用异步加载Disqus评论 - 周炳光的博客 | Bglky Blog</title>
+
+	<!-- Path to Framework7 Library CSS, Material Theme -->
+	<link rel="stylesheet" href="/css/framework7.material.custom.min.css">
+	<!-- Path to your custom web app styles-->
+	<link rel="stylesheet" href="/css/main.css">
+	<link rel="canonical" href="http://bglky.me/2016/07/26/SPA-load-disqus.html">
+	<link rel="alternate" type="application/rss+xml" title="Bglky Blog" href="http://bglky.me/feed.xml">
+	
+</head>
+	<body>
+		<!-- Status bar overlay for full screen mode (PhoneGap) -->
+		<div class="statusbar-overlay"></div>
+		<!-- Panels overlay-->
+		<div class="panel-overlay"></div>
+		<!-- Left panel with cover effect-->
+<div class="panel panel-left panel-cover">
+	<div class="view navbar-fixed">
+		<div class="pages">
+			<div data-page="panel-left" class="page">
+				<div class="navbar">
+					<div class="navbar-inner">
+						<div class="center">Nav Panel</div>
+					</div>
+				</div>
+				<div class="page-content">
+					<div class="content-block-title">Your pages</div>
+					<div class="list-block inset">
+						<ul>
+							<li>
+								<a href="/" class="item-link close-panel">
+									<div class="item-content">
+										<div class="item-media"><i class="icon icon-letter">H</i></div>
+										<div class="item-inner">
+											<div class="item-title">Home</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							 
+							<li>
+								<a href="/about/" class="item-link close-panel">
+									<div class="item-content">
+										<div class="item-media"><i class="icon icon-letter">A</i></div>
+										<div class="item-inner">
+											<div class="item-title">About</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							        
+							<li>
+								<a href="/tags/" class="item-link close-panel">
+									<div class="item-content">
+										<div class="item-media"><i class="icon icon-letter">T</i></div>
+										<div class="item-inner">
+											<div class="item-title">Tags</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							 
+						</ul>
+					</div>
+					<div class="content-block-title">Your socials</div>
+					<div class="content-block inset socials">
+						<img class="avatar" src="/img/avatar.jpg ">
+						<p class="introduction">Better late than never.</p>
+						<ul class="social-media-list">
+							
+							<li>
+								<a class="link icon-only external" target="_blank" href="https://github.com/bglky">
+									<i class="icon icon-github"></i>
+								</a>
+							</li>
+							   
+							<li>
+								<a class="link icon-only external" target="_blank" href="https://zhihu.com/people/bglky">
+									<i class="icon icon-zhihu"></i>
+								</a>
+							</li>
+							  
+							<li>
+								<a class="link icon-only external" target="_blank" href="https://segmentfault.com/u/bglky">
+									<i class="icon icon-segmentfault"></i>
+								</a>
+							</li>
+							
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+		<!-- Views -->
+		<div class="views">
+			<!-- Your main view, should have "view-main" class -->
+			<div class="view view-main">
+				<!-- Pages container, because we use fixed navbar and toolbar, it has additional appropriate classes-->
+				<div class="pages navbar-fixed">
+					<!-- We don't need full layout in this file because this page will be parsed with Ajax. It is just enough to put here .page-->
+<!-- But,But,But for SEO we need full layout -->
+
+<!-- Page, "data-page" contains page name -->
+<div data-page="单页应用异步加载Disqus评论" class="page post no-side-panel">
+	<!-- Top Navbar 请按照Framework7 material的navbar结构编写代码-->
+<nav class="navbar site-nav">
+	<div class="navbar-inner">
+		<div class="center"><a class="link site-title" href="/">Bglky Blog</a></div>
+		<div class="right">
+			<a class="link page-link" href="/">Home</a> 
+			
+			<a class="link page-link" href="/about/">About</a>
+			
+			<a class="link page-link" href="/tags/">Tags</a>
+			
+			<a href="#" class="link icon-only open-panel menu-icon"><i class="icon icon-bars"></i></a>
+		</div>
+	</div>
+</nav>
+	<!-- Speed Dial Wrap -->
+	<div class="speed-dial">
+		<!-- FAB inside will open Speed Dial actions -->
+		<a href="#" class="floating-button" style="background-color:#26a69a;background-color:#81C784;">
+			<!-- First icon is visible when Speed Dial actions are closed -->
+			<i class="icon icon-share"></i>
+			<!-- Second icon is visible when Speed Dial actions are opened -->
+			<i class="icon icon-close"></i>
+		</a>
+		<!-- Speed Dial Actions -->
+		<div class="speed-dial-buttons">
+			<!-- First Speed Dial button -->
+			<a class="external" href="http://service.weibo.com/share/share.php?url=http://bglky.me/2016/07/26/SPA-load-disqus.html&title=单页应用异步加载Disqus评论" title="Share to sina weibo" target="_blank" style="background-color: #EF5350;">
+				<i class="icon icon-sina"></i>
+			</a>
+			<!-- Second Speed Dial  button -->
+			<a class="external" href="http://www.facebook.com/share.php?u=http://bglky.me/2016/07/26/SPA-load-disqus.html" title="Share to Facebook" target="_blank" style="background-color: #3B5998; ;">
+				<i class="icon icon-facebook"></i>
+			</a>
+			<!-- Third Speed Dial  button -->
+			<a class="external" href="http://twitter.com/intent/tweet?url=http://bglky.me/2016/07/26/SPA-load-disqus.html&text=单页应用异步加载Disqus评论" title="Share to Twitter" target="_blank" style="background-color: #2196F3;">
+				<i class="icon icon-twitter"></i>
+			</a>
+		</div>
+	</div>
+	<!-- End of Speed Dial -->
+	<!-- Scrollable page content -->
+	<div class="page-content hide-navbar-on-scroll">
+		<header class="site-header">
+	<div class="wrapper">
+		<div class="content-block">
+						
+			<h1 class="post-title">单页应用异步加载Disqus评论</h1> 
+			<h2 class="post-subtitle">"Loading Disqus asynchronously on SPA."</h2>
+			<p class="post-meta">
+				 -- <time datetime="2016-07-26T23:25:07+08:00" itemprop="datePublished">Jul 26, 2016</time>
+				 • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">Bglky</span></span>
+			</p>
+			<div class="tags">
+				
+				<a class="link chip" href="/tags/#博客">
+					<!--<div class="chip-media bg-blue">T</div>-->
+					<div class="chip-label">博客</div>
+				</a>
+				
+			</div>
+			
+		</div>
+	</div>
+</header>
+		<div class="wrapper">
+			<div class="main-panel">
+				<div class="content-block">
+					<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+						<!--
+						<header class="post-header">
+							<h1 class="post-title" itemprop="name headline">单页应用异步加载Disqus评论</h1>
+							<p class="post-meta">
+								<time datetime="2016-07-26T23:25:07+08:00" itemprop="datePublished">Jul 26, 2016</time> • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">Bglky</span></span>
+							</p>
+						</header>
+						-->
+						<div class="post-content" itemprop="articleBody">
+							<h3 id="disqusembedjs">1. 动态加载Disqus的embed.js文件</h3>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code>
+<span class="c1">// 动态加载js 函数</span>
+<span class="kd">function</span> <span class="nx">loadJS</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span> <span class="nx">callback</span><span class="p">,</span> <span class="nx">async</span><span class="p">,</span> <span class="nx">id</span><span class="p">)</span> <span class="p">{</span>
+	<span class="kd">var</span> <span class="nx">script</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">"script"</span><span class="p">);</span>
+	<span class="k">if</span> <span class="p">(</span><span class="nx">async</span><span class="p">)</span> <span class="nx">script</span><span class="p">.</span><span class="nx">async</span> <span class="o">=</span> <span class="nx">async</span><span class="p">;</span><span class="c1">//是否异步加载</span>
+	<span class="k">if</span> <span class="p">(</span><span class="nx">id</span><span class="p">)</span> <span class="nx">script</span><span class="p">.</span><span class="nx">id</span> <span class="o">=</span> <span class="nx">id</span><span class="p">;</span>
+	<span class="nx">script</span><span class="p">.</span><span class="nx">src</span> <span class="o">=</span> <span class="nx">url</span><span class="p">;</span>
+	<span class="k">if</span> <span class="p">(</span><span class="nx">callback</span><span class="p">)</span> <span class="p">{</span><span class="c1">//加载完毕回调函数</span>
+
+		<span class="c1">//方法1：IE8及以下不支持addEventListener</span>
+		<span class="nx">script</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">"load"</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+			<span class="nx">callback</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="nx">e</span><span class="p">);</span>
+		<span class="p">},</span> <span class="kc">false</span><span class="p">);</span>
+
+		<span class="c1">//方法2：兼容IE6/7/8</span>
+		<span class="cm">/*
+		if (script.readyState) {
+			script.onreadystatechange = function () {
+				if (script.readyState == "loaded" || script.readyState == "complete") {
+					script.onreadystatechange = null;
+					callback();
+				}
+			};
+		} else {
+			script.onload = function () {
+				callback();
+			};
+		}
+		*/</span>
+
+	<span class="p">}</span>
+	<span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s2">"head"</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="o">||</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s2">"body"</span><span class="p">)[</span><span class="mi">0</span><span class="p">]).</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">script</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// 动态加载embed.js,把disqus_username改成你自己的</span>
+<span class="nx">loadJS</span><span class="p">(</span><span class="s2">"http://disqus_username.disqus.com/embed.js"</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="cm">/*加载完回调函数*/</span> <span class="p">},</span> <span class="kc">true</span><span class="p">,</span> <span class="s2">"disqus"</span><span class="p">);</span>
+
+</code></pre>
+</div>
+
+<h3 id="disqus">2. 异步加载Disqus的评论</h3>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code>
+<span class="nx">DISQUS</span><span class="p">.</span><span class="nx">reset</span><span class="p">({</span>
+	<span class="na">reload</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+	<span class="na">config</span><span class="p">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+		<span class="k">this</span><span class="p">.</span><span class="nx">page</span><span class="p">.</span><span class="nx">identifier</span> <span class="o">=</span> <span class="s2">"填写页面的id"</span><span class="p">;</span>
+		<span class="k">this</span><span class="p">.</span><span class="nx">page</span><span class="p">.</span><span class="nx">url</span> <span class="o">=</span> <span class="s2">"填写页面的url"</span><span class="p">;</span>
+		<span class="k">this</span><span class="p">.</span><span class="nx">page</span><span class="p">.</span><span class="nx">title</span> <span class="o">=</span> <span class="s2">"填写页面的标题"</span><span class="p">;</span>
+		<span class="k">this</span><span class="p">.</span><span class="nx">language</span> <span class="o">=</span> <span class="s2">"填写Disqus界面的语言"</span><span class="p">;</span><span class="c1">//中文是zh , 英文是en</span>
+	<span class="p">}</span>
+<span class="p">});</span>
+
+</code></pre>
+</div>
+
+<h3 id="disqus-1">3. 单页应用如何加载Disqus</h3>
+
+<h4 id="section">主要思路：</h4>
+
+<ol>
+  <li>在首次访问有评论的页面时 动态加载embed.js，并且回调DISQUS.reset()。</li>
+  <li>后续访问有评论的页面时直接DISQUS.reset()。</li>
+</ol>
+
+<h4 id="section-1">具体实施：</h4>
+
+<p>具体可参照<a href="https://github.com/bglky/bglky.github.io/blob/master/js/my-app.js">我blog的代码</a></p>
+
+<h3 id="section-2">相关参考</h3>
+<ul>
+  <li><a href="https://help.disqus.com/customer/portal/articles/472107-using-disqus-on-ajax-sites">Using Disqus on AJAX sites</a></li>
+  <li><a href="https://github.com/disqus/DISQUS-API-Recipes/blob/master/snippets/js/disqus-reset/disqus_reset.html"> An example DISQUS.reset recipe</a></li>
+</ul>
+
+
+						</div>
+					</article>
+					<ul class="pager">
+						 
+					</ul>
+				</div>
+				<!-- disqus 评论框 start -->
+				
+				<!-- disqus 评论框 end -->
+				<!-- 多说分享 start -->
+				
+				<div class="ds-share flat content-block" data-thread-key="/2016/07/26/SPA-load-disqus" data-title="单页应用异步加载Disqus评论" data-content="1. 动态加载Disqus的embed.js文件
+
+
+// 动态加载js 函数
+function loadJS(url, callback, async,... | 周炳光的博客 | Bglky Blog " data-url="http://bglky.me/#!/2016/07/26/SPA-load-disqus.html">
+				    <div class="ds-share-inline">
+				      <ul  class="ds-share-icons-16">
+				      	
+				      	<li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+				        <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+				        <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+				        <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+				      	
+				      </ul>
+				      <div class="ds-share-icons-more">
+				      </div>
+				    </div>
+				</div>
+				
+				<!-- 多说分享 end -->
+				<!-- 多说评论框 start -->
+				
+				<div class="comment_duoshuo content-block"  data-thread-key="/2016/07/26/SPA-load-disqus" data-title="单页应用异步加载Disqus评论" data-url="http://bglky.me/#!/2016/07/26/SPA-load-disqus.html">
+					<div class="ds-thread"   data-thread-key="/2016/07/26/SPA-load-disqus" data-title="单页应用异步加载Disqus评论" data-url="http://bglky.me/#!/2016/07/26/SPA-load-disqus.html"></div>
+				</div>			
+				
+				<!-- 多说评论框 end -->
+			</div>
+			<div class="side-panel">
+				<!-- Featured Tags -->
+
+<div class="content-block-title">FEATURED TAGS</div>
+<div class="content-block">
+	<ul>
+		 
+		<li>
+			<a class="link chip" href="/tags/#博客">
+				<!--<div class="chip-media bg-blue">T</div>-->
+				<div class="chip-label">博客</div>
+			</a>
+		</li>
+		 
+	</ul>
+</div>
+
+
+<!-- Socials -->
+
+<div class="content-block-title socials-title">SOCIALS</div>
+<div class="content-block socials">
+	<img class="avatar" src="/img/avatar.jpg">
+	<p class="introduction">Better late than never.</p>
+	<ul class="social-media-list">
+		
+		<li>
+			<a class="link icon-only external" target="_blank" href="https://github.com/bglky">
+				<i class="icon icon-github"></i>
+			</a>
+		</li>
+		   
+		<li>
+			<a class="link icon-only external" target="_blank" href="https://zhihu.com/people/bglky">
+				<i class="icon icon-zhihu"></i>
+			</a>
+		</li>
+		  
+		<li>
+			<a class="link icon-only external" target="_blank" href="https://segmentfault.com/u/bglky">
+				<i class="icon icon-segmentfault"></i>
+			</a>
+		</li>
+		
+	</ul>
+</div>
+
+
+<!-- Friends Blog -->
+
+<div class="content-block-title">FRIENDS</div>
+<div class="content-block">
+	<ul>
+		
+		<li class="friend-link"><a class="link external" href="http://bglky.me">Bglky</a></li>
+		
+		<li class="friend-link"><a class="link external" href="http://it198.com">Hansome</a></li>
+		
+	</ul>
+</div>
+
+			</div>
+		</div>
+		<footer class="site-footer">
+	<div class="wrapper">
+		<div class="content-block">
+			<ul class="social-media-list">
+				
+				<li>
+					<a class="link icon-only external" target="_blank" href="https://github.com/bglky">
+						<i class="icon icon-github"></i>
+					</a>
+				</li>
+				   
+				<li>
+					<a class="link icon-only external" target="_blank" href="https://zhihu.com/people/bglky">
+						<i class="icon icon-zhihu"></i>
+					</a>
+				</li>
+				  
+				<li>
+					<a class="link icon-only external" target="_blank" href="https://segmentfault.com/u/bglky">
+						<i class="icon icon-segmentfault"></i>
+					</a>
+				</li>
+				
+			</ul>
+		</div>
+		<div class="content-block">
+			<p class="copyright">
+				Copyright &copy; 2016 Bglky
+				<br> Theme by <a class="external" target="_blank" href="http://bglky.me">Bglky</a> |
+				<iframe style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="91px" height="20px" src="https://ghbtns.com/github-btn.html?user=bglky&repo=bglky.github.io&type=star&count=true">
+				</iframe>
+			</p>
+		</div>
+	</div>
+</footer>
+	</div>
+</div>
+				</div>
+			</div>
+		</div>
+		<!-- Path to Framework7 Library JS-->
+		<script src="/js/framework7.custom.min.js"></script>
+		<!-- Path to your web app js-->
+		<script src="/js/my-app.js"></script>
+	</body>
+</html>

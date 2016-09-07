@@ -80,16 +80,16 @@ li {
 
 /**
  * Headings
- */
+ 
 h1, h2, h3, h4, h5, h6 {
     font-weight: $base-font-weight;
 }
-
+*/
 
 
 /**
  * Links
- */
+ 
 a {
     color: $brand-color;
     text-decoration: none;
@@ -100,10 +100,18 @@ a {
 
     &:hover {
         color: $text-color;
-        text-decoration: underline;
+        text-decoration: none;
     }
 }
-
+*/
+/**
+ *framework7's reset
+a {
+    outline: 0
+    text-decoration: none;
+    color: #2196f3
+}
+*/
 
 
 /**
@@ -113,7 +121,7 @@ blockquote {
     color: $grey-color;
     border-left: 4px solid $grey-color-light;
     padding-left: $spacing-unit / 2;
-    font-size: 18px;
+    //font-size: 18px;
     letter-spacing: -1px;
     font-style: italic;
 
@@ -134,7 +142,36 @@ code {
     border-radius: 3px;
     background-color: #eef;
 }
-
+//code{
+//  padding: 0px 4px;
+//  font-size: 90%;
+//  color: #c7254e;
+//  background-color: #f9f2f4;
+//  border-radius: 4px;
+//}
+//pre {
+//  display: block;
+//  padding: 9.5px;
+//  margin: 0 0 10px;
+//  font-size: 13px;
+//  line-height: 1.42857143;
+//  color: #333;
+//  word-break: break-all;
+//  word-wrap: break-word;
+//  background-color: #f5f5f5;
+//  border: 1px solid #ccc;
+//  border-radius: 4px
+//}
+//
+//pre code {
+//  padding: 0;
+//  font-size: inherit;
+//  color: inherit;
+//  white-space: pre-wrap;
+//  background-color: transparent;
+//  border-radius: 0
+//}
+//
 code {
     padding: 1px 5px;
 }
@@ -142,6 +179,7 @@ code {
 pre {
     padding: 8px 12px;
     overflow-x: auto;
+    //-webkit-overflow-scrolling: touch;
 
     > code {
         border: 0;
@@ -149,58 +187,6 @@ pre {
         padding-left: 0;
     }
 }
-
-
-
-/**
- * Wrapper
- */
-.wrapper {
-    max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit} * 2));
-    max-width:         calc(#{$content-width} - (#{$spacing-unit} * 2));
-    margin-right: auto;
-    margin-left: auto;
-    padding-right: $spacing-unit;
-    padding-left: $spacing-unit;
-    @extend %clearfix;
-
-    @include media-query($on-laptop) {
-        max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit}));
-        max-width:         calc(#{$content-width} - (#{$spacing-unit}));
-        padding-right: $spacing-unit / 2;
-        padding-left: $spacing-unit / 2;
-    }
-}
-
-
-
-/**
- * Clearfix
- */
-%clearfix {
-
-    &:after {
-        content: "";
-        display: table;
-        clear: both;
-    }
-}
-
-
-
-/**
- * Icons
- */
-.icon {
-
-    > svg {
-        display: inline-block;
-        width: 16px;
-        height: 16px;
-        vertical-align: middle;
-
-        path {
-            fill: $grey-color;
-        }
-    }
+article{
+    word-break: break-all;
 }

@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head lang="zh-CN">
+	<meta charset="utf-8">
+	<!--IE=edge使IE启用其所支持的最新的引擎渲染网页，chrome=1激活Chrome Frame.-->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<!-- 可以让部分国产浏览器（目前只有360浏览器）启用高速模式渲染页面 -->
+	<meta name="renderer" content="webkit">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<!-- Color theme for statusbar -->
+	<meta name="theme-color" content="#2196f3">
+	<meta name="author" content="周炳光,bglky">
+	<meta name="copyright" content="周炳光,bglky">
+	<meta name="keywords" content="周炳光,bglky,周炳光的博客,bglky blog,赖柯滢,responsive,blog,framework7,jekyll">
+	<meta name="description" content="My Blog / Jekyll Theme , SPA and responsive , based on Framework7 and Jekyll.">
+	<!-- My Google Search Console -->
+	<meta name="google-site-verification" content="qcNatfyfm9XNpGn-RdTi78hl4nFoFRjfQeG91b-vWnY" />
+	<!-- 360 -->
+	<meta name="360-site-verification" content="3dbe924a9a58b1fbf328fdf13eb74b67" />
+	<!-- sogou -->
+	<meta name="sogou_site_verification" content="ehuZ97HWes"/>
+	
+	
+	
+	<meta name="duoshuo_username" content="bglky">
+	
+	
+	<meta name="ba_track_id" content="3a12295eec4bd436a92e0b39d50f5b31">
+		
+	<link rel="shortcut icon" href="/img/favicon.ico">
+	<title>周炳光的博客 | Bglky Blog</title>
+
+	<!-- Path to Framework7 Library CSS, Material Theme -->
+	<link rel="stylesheet" href="/css/framework7.material.custom.min.css">
+	<!-- Path to your custom web app styles-->
+	<link rel="stylesheet" href="/css/main.css">
+	<link rel="canonical" href="http://bglky.me/">
+	<link rel="alternate" type="application/rss+xml" title="Bglky Blog" href="http://bglky.me/feed.xml">
+	
+</head>
+	<body>
+		<!-- Status bar overlay for full screen mode (PhoneGap) -->
+		<div class="statusbar-overlay"></div>
+		<!-- Panels overlay-->
+		<div class="panel-overlay"></div>
+		<!-- Left panel with cover effect-->
+<div class="panel panel-left panel-cover">
+	<div class="view navbar-fixed">
+		<div class="pages">
+			<div data-page="panel-left" class="page">
+				<div class="navbar">
+					<div class="navbar-inner">
+						<div class="center">Nav Panel</div>
+					</div>
+				</div>
+				<div class="page-content">
+					<div class="content-block-title">Your pages</div>
+					<div class="list-block inset">
+						<ul>
+							<li>
+								<a href="/" class="item-link close-panel">
+									<div class="item-content">
+										<div class="item-media"><i class="icon icon-letter">H</i></div>
+										<div class="item-inner">
+											<div class="item-title">Home</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							 
+							<li>
+								<a href="/about/" class="item-link close-panel">
+									<div class="item-content">
+										<div class="item-media"><i class="icon icon-letter">A</i></div>
+										<div class="item-inner">
+											<div class="item-title">About</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							        
+							<li>
+								<a href="/tags/" class="item-link close-panel">
+									<div class="item-content">
+										<div class="item-media"><i class="icon icon-letter">T</i></div>
+										<div class="item-inner">
+											<div class="item-title">Tags</div>
+										</div>
+									</div>
+								</a>
+							</li>
+							 
+						</ul>
+					</div>
+					<div class="content-block-title">Your socials</div>
+					<div class="content-block inset socials">
+						<img class="avatar" src="/img/avatar.jpg ">
+						<p class="introduction">Better late than never.</p>
+						<ul class="social-media-list">
+							
+							<li>
+								<a class="link icon-only external" target="_blank" href="https://github.com/bglky">
+									<i class="icon icon-github"></i>
+								</a>
+							</li>
+							   
+							<li>
+								<a class="link icon-only external" target="_blank" href="https://zhihu.com/people/bglky">
+									<i class="icon icon-zhihu"></i>
+								</a>
+							</li>
+							  
+							<li>
+								<a class="link icon-only external" target="_blank" href="https://segmentfault.com/u/bglky">
+									<i class="icon icon-segmentfault"></i>
+								</a>
+							</li>
+							
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+		<!-- Views -->
+		<div class="views">
+			<!-- Your main view, should have "view-main" class -->
+			<div class="view view-main">
+				<!-- Pages container, because we use fixed navbar and toolbar, it has additional appropriate classes-->
+				<div class="pages navbar-fixed">
+					<!-- We don't need full layout in this file because this page will be parsed with Ajax. It is just enough to put here .page-->
+<!-- But,But,But for SEO we need full layout -->
+
+<!-- Page, "data-page" contains page name -->
+<div data-page="index" class="page ">
+	<!-- Top Navbar 请按照Framework7 material的navbar结构编写代码-->
+<nav class="navbar site-nav">
+	<div class="navbar-inner">
+		<div class="center"><a class="link site-title" href="/">Bglky Blog</a></div>
+		<div class="right">
+			<a class="link page-link" href="/">Home</a> 
+			
+			<a class="link page-link" href="/about/">About</a>
+			
+			<a class="link page-link" href="/tags/">Tags</a>
+			
+			<a href="#" class="link icon-only open-panel menu-icon"><i class="icon icon-bars"></i></a>
+		</div>
+	</div>
+</nav>	
+	<!-- Scrollable page content -->
+	<div class="page-content hide-navbar-on-scroll">
+		<header class="site-header">
+	<div class="wrapper">
+		<div class="content-block">
+			
+			<h1 class="site-title">Bglky Blog</h1>
+			<p class="site-description">My Blog / Jekyll Theme , SPA and responsive , based on Framework7 and Jekyll.</p>
+			
+		</div>
+	</div>
+</header>
+		<div class="wrapper">
+			<div class="main-panel">				
+				<div class="content-block">
+	<!--Post list-->
+	<ul class="post-list">
+		
+		<li class="card">
+			<div class="card-header">
+				<h2><a class="post-link" href="/2016/07/26/SPA-load-disqus.html">单页应用异步加载Disqus评论</a></h2>
+			</div>
+			<div class="card-content">
+				<div class="card-content-inner">
+					<p class="post-content-preview">1. 动态加载Disqus的embed.js文件
+
+
+// 动态加载js 函数
+function loadJS(url, callback, async, id) {
+	var script = document.createElement("script");
+	if (async) script.async = async;//是否异步加载
+	if (id) script.id = id...</p>
+				</div>
+			</div>
+			<div class="card-footer"><span class="post-meta">Posted on Jul 26, 2016</span></div>
+		</li>
+		
+	</ul>
+	<!-- Pager -->
+	
+</div>				
+			</div>
+			<div class="side-panel">
+				<!-- Featured Tags -->
+
+<div class="content-block-title">FEATURED TAGS</div>
+<div class="content-block">
+	<ul>
+		 
+		<li>
+			<a class="link chip" href="/tags/#博客">
+				<!--<div class="chip-media bg-blue">T</div>-->
+				<div class="chip-label">博客</div>
+			</a>
+		</li>
+		 
+	</ul>
+</div>
+
+
+<!-- Socials -->
+
+<div class="content-block-title socials-title">SOCIALS</div>
+<div class="content-block socials">
+	<img class="avatar" src="/img/avatar.jpg">
+	<p class="introduction">Better late than never.</p>
+	<ul class="social-media-list">
+		
+		<li>
+			<a class="link icon-only external" target="_blank" href="https://github.com/bglky">
+				<i class="icon icon-github"></i>
+			</a>
+		</li>
+		   
+		<li>
+			<a class="link icon-only external" target="_blank" href="https://zhihu.com/people/bglky">
+				<i class="icon icon-zhihu"></i>
+			</a>
+		</li>
+		  
+		<li>
+			<a class="link icon-only external" target="_blank" href="https://segmentfault.com/u/bglky">
+				<i class="icon icon-segmentfault"></i>
+			</a>
+		</li>
+		
+	</ul>
+</div>
+
+
+<!-- Friends Blog -->
+
+<div class="content-block-title">FRIENDS</div>
+<div class="content-block">
+	<ul>
+		
+		<li class="friend-link"><a class="link external" href="http://bglky.me">Bglky</a></li>
+		
+		<li class="friend-link"><a class="link external" href="http://it198.com">Hansome</a></li>
+		
+	</ul>
+</div>
+
+			</div>
+		</div>
+		<footer class="site-footer">
+	<div class="wrapper">
+		<div class="content-block">
+			<ul class="social-media-list">
+				
+				<li>
+					<a class="link icon-only external" target="_blank" href="https://github.com/bglky">
+						<i class="icon icon-github"></i>
+					</a>
+				</li>
+				   
+				<li>
+					<a class="link icon-only external" target="_blank" href="https://zhihu.com/people/bglky">
+						<i class="icon icon-zhihu"></i>
+					</a>
+				</li>
+				  
+				<li>
+					<a class="link icon-only external" target="_blank" href="https://segmentfault.com/u/bglky">
+						<i class="icon icon-segmentfault"></i>
+					</a>
+				</li>
+				
+			</ul>
+		</div>
+		<div class="content-block">
+			<p class="copyright">
+				Copyright &copy; 2016 Bglky
+				<br> Theme by <a class="external" target="_blank" href="http://bglky.me">Bglky</a> |
+				<iframe style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="91px" height="20px" src="https://ghbtns.com/github-btn.html?user=bglky&repo=bglky.github.io&type=star&count=true">
+				</iframe>
+			</p>
+		</div>
+	</div>
+</footer>
+	</div>
+</div>
+				</div>
+			</div>
+		</div>
+		<!-- Path to Framework7 Library JS-->
+		<script src="/js/framework7.custom.min.js"></script>
+		<!-- Path to your web app js-->
+		<script src="/js/my-app.js"></script>
+	</body>
+</html>
