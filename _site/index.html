@@ -29,7 +29,7 @@
 	<meta name="ba_track_id" content="3a12295eec4bd436a92e0b39d50f5b31">
 		
 	<link rel="shortcut icon" href="/img/favicon.ico">
-	<title>PHP Java Python Linux 数据什么的都不会</title>
+	<title>PHP Java Python Linux 数据库什么的都不会</title>
 
 	<!-- Path to Framework7 Library CSS, Material Theme -->
 	<link rel="stylesheet" href="/css/framework7.material.custom.min.css">
@@ -170,18 +170,33 @@
 		
 		<li class="card">
 			<div class="card-header">
+				<h2><a class="post-link" href="/2016/09/07/Xdebug.html">Ubuntu14.04配置PHPStorm+Xdebug调试PHP代码</a></h2>
+			</div>
+			<div class="card-content">
+				<div class="card-content-inner">
+					<p class="post-content-preview">PHP程序员在开发过程中，普遍使用二分查找法，死亡输出法（笔者随便取的名字）来调试代码，在程序执行的过程中，通过输出特定变量的值可以判断程序执行是否正确，使用一些时间函数常用函数甚至还可以看出效率高低，常用的函数有echo、print_r()、var_dump()、printf()等，对于有较丰富开发经验的老程序员来说这些也已经足够了。这些方法都是在学习PHP过程中总结出来的，并不适合所有人...</p>
+				</div>
+			</div>
+			<div class="card-footer"><span class="post-meta">Posted on Sep 7, 2016</span></div>
+		</li>
+		
+		<li class="card">
+			<div class="card-header">
 				<h2><a class="post-link" href="/2016/07/26/SPA-load-disqus.html">单页应用异步加载Disqus评论</a></h2>
 			</div>
 			<div class="card-content">
 				<div class="card-content-inner">
 					<p class="post-content-preview">1. 动态加载Disqus的embed.js文件
 
+[root@template ~]# cd ~/src/
+[root@template src]# wget http://nginx.org/download/nginx-1.8.1.tar.gz
+
+
+
+``` javascript
 
 // 动态加载js 函数
-function loadJS(url, callback, async, id) {
-	var script = document.createElement("script");
-	if (async) script.async = async;//是否异步加载
-	if (id) script.id = id...</p>
+function loadJS(url, callback, async, i...</p>
 				</div>
 			</div>
 			<div class="card-footer"><span class="post-meta">Posted on Jul 26, 2016</span></div>
@@ -203,6 +218,27 @@ function loadJS(url, callback, async, id) {
 			<a class="link chip" href="/tags/#博客">
 				<!--<div class="chip-media bg-blue">T</div>-->
 				<div class="chip-label">博客</div>
+			</a>
+		</li>
+		  
+		<li>
+			<a class="link chip" href="/tags/#PHP">
+				<!--<div class="chip-media bg-blue">T</div>-->
+				<div class="chip-label">PHP</div>
+			</a>
+		</li>
+		  
+		<li>
+			<a class="link chip" href="/tags/#Ubuntu">
+				<!--<div class="chip-media bg-blue">T</div>-->
+				<div class="chip-label">Ubuntu</div>
+			</a>
+		</li>
+		  
+		<li>
+			<a class="link chip" href="/tags/#Xdebug">
+				<!--<div class="chip-media bg-blue">T</div>-->
+				<div class="chip-label">Xdebug</div>
 			</a>
 		</li>
 		 

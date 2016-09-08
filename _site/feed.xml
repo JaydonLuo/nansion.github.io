@@ -5,30 +5,67 @@
     <description>My Blog / Jekyll Theme , SPA and responsive , based on Framework7 and Jekyll.</description>
     <link>http://bglky.me/</link>
     <atom:link href="http://bglky.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 07 Sep 2016 17:15:01 +0800</pubDate>
-    <lastBuildDate>Wed, 07 Sep 2016 17:15:01 +0800</lastBuildDate>
+    <pubDate>Thu, 08 Sep 2016 17:15:02 +0800</pubDate>
+    <lastBuildDate>Thu, 08 Sep 2016 17:15:02 +0800</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
+    
+      <item>
+        <title>Ubuntu14.04配置PHPStorm+Xdebug调试PHP代码</title>
+        <description>&lt;p&gt;PHP程序员在开发过程中，普遍使用二分查找法，死亡输出法（笔者随便取的名字）来调试代码，在程序执行的过程中，通过输出特定变量的值可以判断程序执行是否正确，使用一些时间函数常用函数甚至还可以看出效率高低，常用的函数有echo、print_r()、var_dump()、printf()等，对于有较丰富开发经验的老程序员来说这些也已经足够了。这些方法都是在学习PHP过程中总结出来的，并不适合所有人，初学者在学习过程中，更加希望知道的是执行一个完整的PHP程序流程是怎么样的，调用了什么函数，返回的结果是什么。&lt;/p&gt;
+
+&lt;h3 id=&quot;xdebug&quot;&gt;什么是Xdebug？&lt;/h3&gt;
+
+&lt;p&gt;Xdebug是一个开放源代码的PHP程序调试器(即一个Debug工具)，可以用来跟踪，调试和分析PHP程序的运行状况。Xdebug现在的最新版本是Xdebug 2.4.0RC4,release日期 2016-01-25，添加了对PHP7的支持。&lt;/p&gt;
+
+&lt;p&gt;读者可以前往&lt;a href=&quot;https://xdebug.org/&quot;&gt;官网&lt;/a&gt;获取最新版本，或者使用&lt;a href=&quot;https://github.com/xdebug/xdebug&quot;&gt;github&lt;/a&gt;下载源码&lt;/p&gt;
+
+&lt;h3 id=&quot;xdebug-1&quot;&gt;为什么要用Xdebug？&lt;/h3&gt;
+&lt;p&gt;使用Xdebug的原因有很多，前面已经讲到，新手在学习的过程很难知道一个完整的PHP流程，就是PHP老司机，接手一个新项目时候，也难免会翻车，一个有点历史的项目，前人已经写了很多代码，有些变量是从父类继承过来的，有些是在程序入口处自定义的，还有些直接在模板突然使用的，这往往会让人看得一塌糊涂，这个时候使用死亡输出法可能要死十几次才到模板，死亡输出法不仅难以了解到一个完整的程序流程，还会浪费宝贵的时间。使用了Xdebug可以在入口处打断点，然后单步执行，手动走完整个流程，过程清晰明了，感觉世界都在自己的手中。&lt;/p&gt;
+
+&lt;p&gt;笔者认为还有一个重要原因就是Java天生就有单步调试，简单如Ecplice，庞大如IntelliJ IDEA，每次在公司和Java同事一起调试的时候，看着他们傲娇的眼神，对我们PHPer一脸鄙视，绝对不能忍！我们也要有，毕竟PHP才是世界上最好的语言！&lt;/p&gt;
+
+&lt;h3 id=&quot;phpstormxdebug&quot;&gt;PHPStorm调试界面和Xdebug原理&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/img/20160603-1.png&quot; alt=&quot;PHPStorm调试界面&quot; /&gt;&lt;/p&gt;
+</description>
+        <pubDate>Wed, 07 Sep 2016 23:25:07 +0800</pubDate>
+        <link>http://bglky.me/2016/09/07/Xdebug.html</link>
+        <guid isPermaLink="true">http://bglky.me/2016/09/07/Xdebug.html</guid>
+        
+        <category>PHP</category>
+        
+        <category>Ubuntu</category>
+        
+        <category>Xdebug</category>
+        
+        
+      </item>
     
       <item>
         <title>单页应用异步加载Disqus评论</title>
         <description>&lt;h3 id=&quot;disqusembedjs&quot;&gt;1. 动态加载Disqus的embed.js文件&lt;/h3&gt;
 
-&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-&lt;span class=&quot;c1&quot;&gt;// 动态加载js 函数&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;loadJS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;callback&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;async&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-	&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;script&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;createElement&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;script&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-	&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;async&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;script&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;async&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;async&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//是否异步加载&lt;/span&gt;
-	&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;script&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;id&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-	&lt;span class=&quot;nx&quot;&gt;script&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;src&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-	&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;callback&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//加载完毕回调函数&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sh&quot; data-lang=&quot;sh&quot;&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;root@template ~]# &lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; ~/src/
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;root@template src]# wget http://nginx.org/download/nginx-1.8.1.tar.gz&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-		&lt;span class=&quot;c1&quot;&gt;//方法1：IE8及以下不支持addEventListener&lt;/span&gt;
-		&lt;span class=&quot;nx&quot;&gt;script&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;addEventListener&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;load&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-			&lt;span class=&quot;nx&quot;&gt;callback&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-		&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
 
-		&lt;span class=&quot;c1&quot;&gt;//方法2：兼容IE6/7/8&lt;/span&gt;
-		&lt;span class=&quot;cm&quot;&gt;/*
+``` javascript
+
+// 动态加载js 函数
+function loadJS(url, callback, async, id) {
+	var script = document.createElement(&quot;script&quot;);
+	if (async) script.async = async;//是否异步加载
+	if (id) script.id = id;
+	script.src = url;
+	if (callback) {//加载完毕回调函数
+
+		//方法1：IE8及以下不支持addEventListener
+		script.addEventListener(&quot;load&quot;, function(e) {
+			callback(null, e);
+		}, false);
+
+		//方法2：兼容IE6/7/8
+		/*
 		if (script.readyState) {
 			script.onreadystatechange = function () {
 				if (script.readyState == &quot;loaded&quot; || script.readyState == &quot;complete&quot;) {
@@ -41,14 +78,14 @@
 				callback();
 			};
 		}
-		*/&lt;/span&gt;
+		*/
 
-	&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-	&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getElementsByTagName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;head&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getElementsByTagName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;body&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;appendChild&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;script&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+	}
+	(document.getElementsByTagName(&quot;head&quot;)[0] || document.getElementsByTagName(&quot;body&quot;)[0]).appendChild(script);
+}
 
-&lt;span class=&quot;c1&quot;&gt;// 动态加载embed.js,把disqus_username改成你自己的&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;loadJS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;http://disqus_username.disqus.com/embed.js&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;cm&quot;&gt;/*加载完回调函数*/&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;disqus&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+// 动态加载embed.js,把disqus_username改成你自己的
+loadJS(&quot;http://disqus_username.disqus.com/embed.js&quot;, function() { /*加载完回调函数*/ }, true, &quot;disqus&quot;);
 
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;

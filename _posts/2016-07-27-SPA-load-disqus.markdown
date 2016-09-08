@@ -10,6 +10,14 @@ tags:
 
 ### 1. 动态加载Disqus的embed.js文件
 
+{% highlight sh %}
+[root@template ~]# cd ~/src/
+[root@template src]# wget http://nginx.org/download/nginx-1.8.1.tar.gz
+{% endhighlight %}
+
+```
+
+
 ``` javascript
 
 // 动态加载js 函数

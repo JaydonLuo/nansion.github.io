@@ -13,7 +13,7 @@
 	<meta name="author" content="周炳光,bglky">
 	<meta name="copyright" content="周炳光,bglky">
 	<meta name="keywords" content="周炳光,bglky,周炳光的博客,bglky blog,赖柯滢,responsive,blog,framework7,jekyll">
-	<meta name="description" content="My Blog / Jekyll Theme , SPA and responsive , based on Framework7 and Jekyll.">
+	<meta name="description" content="PHP程序员在开发过程中，普遍使用二分查找法，死亡输出法（笔者随便取的名字）来调试代码，在程序执行的过程中，通过输出特定变量的值可以判断程序执行是否正确，使用一些时间函数常用函数甚至还可以看出效率高低，常用的函数有echo、print_r()、var_dump()、printf()等，对于有较丰富开发经验的老程序...">
 	<!-- My Google Search Console -->
 	<meta name="google-site-verification" content="qcNatfyfm9XNpGn-RdTi78hl4nFoFRjfQeG91b-vWnY" />
 	<!-- 360 -->
@@ -29,13 +29,13 @@
 	<meta name="ba_track_id" content="3a12295eec4bd436a92e0b39d50f5b31">
 		
 	<link rel="shortcut icon" href="/img/favicon.ico">
-	<title>About - PHP Java Python Linux 数据库什么的都不会</title>
+	<title>Ubuntu14.04配置PHPStorm+Xdebug调试PHP代码 - PHP Java Python Linux 数据库什么的都不会</title>
 
 	<!-- Path to Framework7 Library CSS, Material Theme -->
 	<link rel="stylesheet" href="/css/framework7.material.custom.min.css">
 	<!-- Path to your custom web app styles-->
 	<link rel="stylesheet" href="/css/main.css">
-	<link rel="canonical" href="http://bglky.me/about/">
+	<link rel="canonical" href="http://bglky.me/2016/09/07/Xdebug.html">
 	<link rel="alternate" type="application/rss+xml" title="Nansion Blog" href="http://bglky.me/feed.xml">
 	
 </head>
@@ -134,7 +134,7 @@
 <!-- But,But,But for SEO we need full layout -->
 
 <!-- Page, "data-page" contains page name -->
-<div data-page="About" class="page ">
+<div data-page="Ubuntu14.04配置PHPStorm+Xdebug调试PHP代码" class="page post no-side-panel">
 	<!-- Top Navbar 请按照Framework7 material的navbar结构编写代码-->
 <nav class="navbar site-nav">
 	<div class="navbar-inner">
@@ -149,24 +149,134 @@
 			<a href="#" class="link icon-only open-panel menu-icon"><i class="icon icon-bars"></i></a>
 		</div>
 	</div>
-</nav>	
+</nav>
+	<!-- Speed Dial Wrap -->
+	<div class="speed-dial">
+		<!-- FAB inside will open Speed Dial actions -->
+		<a href="#" class="floating-button" style="background-color:#26a69a;background-color:#81C784;">
+			<!-- First icon is visible when Speed Dial actions are closed -->
+			<i class="icon icon-share"></i>
+			<!-- Second icon is visible when Speed Dial actions are opened -->
+			<i class="icon icon-close"></i>
+		</a>
+		<!-- Speed Dial Actions -->
+		<div class="speed-dial-buttons">
+			<!-- First Speed Dial button -->
+			<a class="external" href="http://service.weibo.com/share/share.php?url=http://bglky.me/2016/09/07/Xdebug.html&title=Ubuntu14.04配置PHPStorm+Xdebug调试PHP代码" title="Share to sina weibo" target="_blank" style="background-color: #EF5350;">
+				<i class="icon icon-sina"></i>
+			</a>
+			<!-- Second Speed Dial  button -->
+			<a class="external" href="http://www.facebook.com/share.php?u=http://bglky.me/2016/09/07/Xdebug.html" title="Share to Facebook" target="_blank" style="background-color: #3B5998; ;">
+				<i class="icon icon-facebook"></i>
+			</a>
+			<!-- Third Speed Dial  button -->
+			<a class="external" href="http://twitter.com/intent/tweet?url=http://bglky.me/2016/09/07/Xdebug.html&text=Ubuntu14.04配置PHPStorm+Xdebug调试PHP代码" title="Share to Twitter" target="_blank" style="background-color: #2196F3;">
+				<i class="icon icon-twitter"></i>
+			</a>
+		</div>
+	</div>
+	<!-- End of Speed Dial -->
 	<!-- Scrollable page content -->
 	<div class="page-content hide-navbar-on-scroll">
 		<header class="site-header">
 	<div class="wrapper">
 		<div class="content-block">
-			
-			<h1 class="page-title">About</h1>
-			<p class="page-description">Hello , I'm Bglky.</p>
+						
+			<h1 class="post-title">Ubuntu14.04配置PHPStorm+Xdebug调试PHP代码</h1> 
+			<h2 class="post-subtitle">"实现类似Java的断点调试功能"</h2>
+			<p class="post-meta">
+				 -- <time datetime="2016-09-07T23:25:07+08:00" itemprop="datePublished">Sep 7, 2016</time>
+				 • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">Nansion</span></span>
+			</p>
+			<div class="tags">
+				
+				<a class="link chip" href="/tags/#PHP">
+					<!--<div class="chip-media bg-blue">T</div>-->
+					<div class="chip-label">PHP</div>
+				</a>
+				
+				<a class="link chip" href="/tags/#Ubuntu">
+					<!--<div class="chip-media bg-blue">T</div>-->
+					<div class="chip-label">Ubuntu</div>
+				</a>
+				
+				<a class="link chip" href="/tags/#Xdebug">
+					<!--<div class="chip-media bg-blue">T</div>-->
+					<div class="chip-label">Xdebug</div>
+				</a>
+				
+			</div>
 			
 		</div>
 	</div>
 </header>
 		<div class="wrapper">
-			<div class="main-panel">				
+			<div class="main-panel">
 				<div class="content-block">
-	This is a page about me. I will finish it next.
-</div>				
+					<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+						<!--
+						<header class="post-header">
+							<h1 class="post-title" itemprop="name headline">Ubuntu14.04配置PHPStorm+Xdebug调试PHP代码</h1>
+							<p class="post-meta">
+								<time datetime="2016-09-07T23:25:07+08:00" itemprop="datePublished">Sep 7, 2016</time> • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">Nansion</span></span>
+							</p>
+						</header>
+						-->
+						<div class="post-content" itemprop="articleBody">
+							<p>PHP程序员在开发过程中，普遍使用二分查找法，死亡输出法（笔者随便取的名字）来调试代码，在程序执行的过程中，通过输出特定变量的值可以判断程序执行是否正确，使用一些时间函数常用函数甚至还可以看出效率高低，常用的函数有echo、print_r()、var_dump()、printf()等，对于有较丰富开发经验的老程序员来说这些也已经足够了。这些方法都是在学习PHP过程中总结出来的，并不适合所有人，初学者在学习过程中，更加希望知道的是执行一个完整的PHP程序流程是怎么样的，调用了什么函数，返回的结果是什么。</p>
+
+<h3 id="xdebug">什么是Xdebug？</h3>
+
+<p>Xdebug是一个开放源代码的PHP程序调试器(即一个Debug工具)，可以用来跟踪，调试和分析PHP程序的运行状况。Xdebug现在的最新版本是Xdebug 2.4.0RC4,release日期 2016-01-25，添加了对PHP7的支持。</p>
+
+<p>读者可以前往<a href="https://xdebug.org/">官网</a>获取最新版本，或者使用<a href="https://github.com/xdebug/xdebug">github</a>下载源码</p>
+
+<h3 id="xdebug-1">为什么要用Xdebug？</h3>
+<p>使用Xdebug的原因有很多，前面已经讲到，新手在学习的过程很难知道一个完整的PHP流程，就是PHP老司机，接手一个新项目时候，也难免会翻车，一个有点历史的项目，前人已经写了很多代码，有些变量是从父类继承过来的，有些是在程序入口处自定义的，还有些直接在模板突然使用的，这往往会让人看得一塌糊涂，这个时候使用死亡输出法可能要死十几次才到模板，死亡输出法不仅难以了解到一个完整的程序流程，还会浪费宝贵的时间。使用了Xdebug可以在入口处打断点，然后单步执行，手动走完整个流程，过程清晰明了，感觉世界都在自己的手中。</p>
+
+<p>笔者认为还有一个重要原因就是Java天生就有单步调试，简单如Ecplice，庞大如IntelliJ IDEA，每次在公司和Java同事一起调试的时候，看着他们傲娇的眼神，对我们PHPer一脸鄙视，绝对不能忍！我们也要有，毕竟PHP才是世界上最好的语言！</p>
+
+<h3 id="phpstormxdebug">PHPStorm调试界面和Xdebug原理</h3>
+<p><img src="/img/20160603-1.png" alt="PHPStorm调试界面" /></p>
+
+						</div>
+					</article>
+					<ul class="pager">
+						
+						<li class="previous">
+							<a class="link" href="/2016/07/26/SPA-load-disqus.html" title="单页应用异步加载Disqus评论">&larr; Previous Post</a>
+						</li>
+						 
+					</ul>
+				</div>
+				<!-- disqus 评论框 start -->
+				
+				<!-- disqus 评论框 end -->
+				<!-- 多说分享 start -->
+				
+				<div class="ds-share flat content-block" data-thread-key="/2016/09/07/Xdebug" data-title="Ubuntu14.04配置PHPStorm+Xdebug调试PHP代码" data-content="PHP程序员在开发过程中，普遍使用二分查找法，死亡输出法（笔者随便取的名字）来调试代码，在程序执行的过程中，通过输出特定变量的值可以判断程序执行是否正确，... | PHP Java Python Linux 数据库什么的都不会 " data-url="http://bglky.me/#!/2016/09/07/Xdebug.html">
+				    <div class="ds-share-inline">
+				      <ul  class="ds-share-icons-16">
+				      	
+				      	<li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+				        <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+				        <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+				        <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+				      	
+				      </ul>
+				      <div class="ds-share-icons-more">
+				      </div>
+				    </div>
+				</div>
+				
+				<!-- 多说分享 end -->
+				<!-- 多说评论框 start -->
+				
+				<div class="comment_duoshuo content-block"  data-thread-key="/2016/09/07/Xdebug" data-title="Ubuntu14.04配置PHPStorm+Xdebug调试PHP代码" data-url="http://bglky.me/#!/2016/09/07/Xdebug.html">
+					<div class="ds-thread"   data-thread-key="/2016/09/07/Xdebug" data-title="Ubuntu14.04配置PHPStorm+Xdebug调试PHP代码" data-url="http://bglky.me/#!/2016/09/07/Xdebug.html"></div>
+				</div>			
+				
+				<!-- 多说评论框 end -->
 			</div>
 			<div class="side-panel">
 				<!-- Featured Tags -->
