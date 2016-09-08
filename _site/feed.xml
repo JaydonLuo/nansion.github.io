@@ -5,8 +5,8 @@
     <description>My Blog / Jekyll Theme , SPA and responsive , based on Framework7 and Jekyll.</description>
     <link>http://bglky.me/</link>
     <atom:link href="http://bglky.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 08 Sep 2016 17:15:02 +0800</pubDate>
-    <lastBuildDate>Thu, 08 Sep 2016 17:15:02 +0800</lastBuildDate>
+    <pubDate>Thu, 08 Sep 2016 17:26:43 +0800</pubDate>
+    <lastBuildDate>Thu, 08 Sep 2016 17:26:43 +0800</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
     
       <item>
@@ -25,7 +25,10 @@
 &lt;p&gt;笔者认为还有一个重要原因就是Java天生就有单步调试，简单如Ecplice，庞大如IntelliJ IDEA，每次在公司和Java同事一起调试的时候，看着他们傲娇的眼神，对我们PHPer一脸鄙视，绝对不能忍！我们也要有，毕竟PHP才是世界上最好的语言！&lt;/p&gt;
 
 &lt;h3 id=&quot;phpstormxdebug&quot;&gt;PHPStorm调试界面和Xdebug原理&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&quot;/img/20160603-1.png&quot; alt=&quot;PHPStorm调试界面&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/img/20160603-1.png&quot; alt=&quot;PHPStorm调试界面&quot; /&gt;
+PHPStrom调试界面非常友好，基本和IntelliJ IDEA一样，鼠标悬浮在变量名处可以看到变量的值，左下角是文件执行流程，中间是所有定义了的变量的值，&lt;/p&gt;
+
+&lt;p&gt;未完待续。。。&lt;/p&gt;
 </description>
         <pubDate>Wed, 07 Sep 2016 23:25:07 +0800</pubDate>
         <link>http://bglky.me/2016/09/07/Xdebug.html</link>
