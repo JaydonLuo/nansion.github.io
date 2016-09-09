@@ -1,0 +1,18 @@
+<p>Ubuntu14.04自带的软件版本都是比较老，一般可以通过PPA来安装某些新版本的软件，但是PPA不一定是安全的，笔者曾经为了安装<a href="https://www.deepin.org/">深度操作系统</a>音乐软件，添加了深度的PPA源，结果在一次<code class="highlighter-rouge">apt-get upgrade</code>的时候悲剧了。当然，做为一个喜欢折腾的人，必须是源码手动安装才有感觉。</p>
+
+<h3 id="xdebug">什么是Xdebug？</h3>
+
+<p>Xdebug是一个开放源代码的PHP程序调试器(即一个Debug工具)，可以用来跟踪，调试和分析PHP程序的运行状况。Xdebug现在的最新版本是Xdebug 2.4.0RC4,release日期 2016-01-25，添加了对PHP7的支持。</p>
+
+<p>读者可以前往<a href="https://xdebug.org/">官网</a>获取最新版本，或者使用<a href="https://github.com/xdebug/xdebug">github</a>下载源码</p>
+
+<h3 id="xdebug-1">为什么要用Xdebug？</h3>
+<p>使用Xdebug的原因有很多，前面已经讲到，新手在学习的过程很难知道一个完整的PHP流程，就是PHP老司机，接手一个新项目时候，也难免会翻车，一个有点历史的项目，前人已经写了很多代码，有些变量是从父类继承过来的，有些是在程序入口处自定义的，还有些直接在模板突然使用的，这往往会让人看得一塌糊涂，这个时候使用死亡输出法可能要死十几次才到模板，死亡输出法不仅难以了解到一个完整的程序流程，还会浪费宝贵的时间。使用了Xdebug可以在入口处打断点，然后单步执行，手动走完整个流程，过程清晰明了，感觉世界都在自己的手中。</p>
+
+<p>笔者认为还有一个重要原因就是Java天生就有单步调试，简单如Ecplice，庞大如IntelliJ IDEA，每次在公司和Java同事一起调试的时候，看着他们傲娇的眼神，对我们PHPer一脸鄙视，绝对不能忍！我们也要有，毕竟PHP才是世界上最好的语言！</p>
+
+<h3 id="phpstormxdebug">PHPStorm调试界面和Xdebug原理</h3>
+<p><img src="/img/20160603-1.png" alt="PHPStorm调试界面" />
+PHPStrom调试界面非常友好，基本和IntelliJ IDEA一样，鼠标悬浮在变量名处可以看到变量的值，左下角是文件执行流程，中间是所有定义了的变量的值，</p>
+
+<p>未完待续。。。</p>

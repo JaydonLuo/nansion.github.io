@@ -13,7 +13,7 @@
 	<meta name="author" content="周炳光,bglky">
 	<meta name="copyright" content="周炳光,bglky">
 	<meta name="keywords" content="周炳光,bglky,周炳光的博客,bglky blog,赖柯滢,responsive,blog,framework7,jekyll">
-	<meta name="description" content="1. 动态加载Disqus的embed.js文件">
+	<meta name="description" content="PHP程序员在开发过程中，普遍使用二分查找法，死亡输出法（笔者随便取的名字）来调试代码，在程序执行的过程中，通过输出特定变量的值可以判断程序执行是否正确，使用一些时间函数常用函数甚至还可以看出效率高低，常用的函数有echo、print_r()、var_dump()、printf()等，对于有较丰富开发经验的老程序...">
 	<!-- My Google Search Console -->
 	<meta name="google-site-verification" content="qcNatfyfm9XNpGn-RdTi78hl4nFoFRjfQeG91b-vWnY" />
 	<!-- 360 -->
@@ -29,13 +29,13 @@
 	<meta name="ba_track_id" content="3a12295eec4bd436a92e0b39d50f5b31">
 		
 	<link rel="shortcut icon" href="/img/favicon.ico">
-	<title>单页应用异步加载Disqus评论 - PHP Java Python Linux 数据库什么的都不会</title>
+	<title>Ubuntu14.04配置PHPStorm+Xdebug调试PHP代码 - PHP Java Python Linux 数据库什么的都不会</title>
 
 	<!-- Path to Framework7 Library CSS, Material Theme -->
 	<link rel="stylesheet" href="/css/framework7.material.custom.min.css">
 	<!-- Path to your custom web app styles-->
 	<link rel="stylesheet" href="/css/main.css">
-	<link rel="canonical" href="http://bglky.me/2016/07/26/SPA-load-disqus.html">
+	<link rel="canonical" href="http://bglky.me/2016/06/03/Xdebug.html">
 	<link rel="alternate" type="application/rss+xml" title="Nansion Blog" href="http://bglky.me/feed.xml">
 	
 </head>
@@ -134,7 +134,7 @@
 <!-- But,But,But for SEO we need full layout -->
 
 <!-- Page, "data-page" contains page name -->
-<div data-page="单页应用异步加载Disqus评论" class="page post no-side-panel">
+<div data-page="Ubuntu14.04配置PHPStorm+Xdebug调试PHP代码" class="page post no-side-panel">
 	<!-- Top Navbar 请按照Framework7 material的navbar结构编写代码-->
 <nav class="navbar site-nav">
 	<div class="navbar-inner">
@@ -162,15 +162,15 @@
 		<!-- Speed Dial Actions -->
 		<div class="speed-dial-buttons">
 			<!-- First Speed Dial button -->
-			<a class="external" href="http://service.weibo.com/share/share.php?url=http://bglky.me/2016/07/26/SPA-load-disqus.html&title=单页应用异步加载Disqus评论" title="Share to sina weibo" target="_blank" style="background-color: #EF5350;">
+			<a class="external" href="http://service.weibo.com/share/share.php?url=http://bglky.me/2016/06/03/Xdebug.html&title=Ubuntu14.04配置PHPStorm+Xdebug调试PHP代码" title="Share to sina weibo" target="_blank" style="background-color: #EF5350;">
 				<i class="icon icon-sina"></i>
 			</a>
 			<!-- Second Speed Dial  button -->
-			<a class="external" href="http://www.facebook.com/share.php?u=http://bglky.me/2016/07/26/SPA-load-disqus.html" title="Share to Facebook" target="_blank" style="background-color: #3B5998; ;">
+			<a class="external" href="http://www.facebook.com/share.php?u=http://bglky.me/2016/06/03/Xdebug.html" title="Share to Facebook" target="_blank" style="background-color: #3B5998; ;">
 				<i class="icon icon-facebook"></i>
 			</a>
 			<!-- Third Speed Dial  button -->
-			<a class="external" href="http://twitter.com/intent/tweet?url=http://bglky.me/2016/07/26/SPA-load-disqus.html&text=单页应用异步加载Disqus评论" title="Share to Twitter" target="_blank" style="background-color: #2196F3;">
+			<a class="external" href="http://twitter.com/intent/tweet?url=http://bglky.me/2016/06/03/Xdebug.html&text=Ubuntu14.04配置PHPStorm+Xdebug调试PHP代码" title="Share to Twitter" target="_blank" style="background-color: #2196F3;">
 				<i class="icon icon-twitter"></i>
 			</a>
 		</div>
@@ -182,17 +182,27 @@
 	<div class="wrapper">
 		<div class="content-block">
 						
-			<h1 class="post-title">单页应用异步加载Disqus评论</h1> 
-			<h2 class="post-subtitle">"Loading Disqus asynchronously on SPA."</h2>
+			<h1 class="post-title">Ubuntu14.04配置PHPStorm+Xdebug调试PHP代码</h1> 
+			<h2 class="post-subtitle">"实现类似Java的断点调试功能"</h2>
 			<p class="post-meta">
-				 -- <time datetime="2016-07-26T23:25:07+08:00" itemprop="datePublished">Jul 26, 2016</time>
-				 • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">Bglky</span></span>
+				 -- <time datetime="2016-06-03T23:25:07+08:00" itemprop="datePublished">Jun 3, 2016</time>
+				 • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">Nansion</span></span>
 			</p>
 			<div class="tags">
 				
-				<a class="link chip" href="/tags/#博客">
+				<a class="link chip" href="/tags/#PHP">
 					<!--<div class="chip-media bg-blue">T</div>-->
-					<div class="chip-label">博客</div>
+					<div class="chip-label">PHP</div>
+				</a>
+				
+				<a class="link chip" href="/tags/#Ubuntu">
+					<!--<div class="chip-media bg-blue">T</div>-->
+					<div class="chip-label">Ubuntu</div>
+				</a>
+				
+				<a class="link chip" href="/tags/#Xdebug">
+					<!--<div class="chip-media bg-blue">T</div>-->
+					<div class="chip-label">Xdebug</div>
 				</a>
 				
 			</div>
@@ -206,107 +216,38 @@
 					<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 						<!--
 						<header class="post-header">
-							<h1 class="post-title" itemprop="name headline">单页应用异步加载Disqus评论</h1>
+							<h1 class="post-title" itemprop="name headline">Ubuntu14.04配置PHPStorm+Xdebug调试PHP代码</h1>
 							<p class="post-meta">
-								<time datetime="2016-07-26T23:25:07+08:00" itemprop="datePublished">Jul 26, 2016</time> • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">Bglky</span></span>
+								<time datetime="2016-06-03T23:25:07+08:00" itemprop="datePublished">Jun 3, 2016</time> • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">Nansion</span></span>
 							</p>
 						</header>
 						-->
 						<div class="post-content" itemprop="articleBody">
-							<h3 id="disqusembedjs">1. 动态加载Disqus的embed.js文件</h3>
+							<p>PHP程序员在开发过程中，普遍使用二分查找法，死亡输出法（笔者随便取的名字）来调试代码，在程序执行的过程中，通过输出特定变量的值可以判断程序执行是否正确，使用一些时间函数常用函数甚至还可以看出效率高低，常用的函数有echo、print_r()、var_dump()、printf()等，对于有较丰富开发经验的老程序员来说这些也已经足够了。这些方法都是在学习PHP过程中总结出来的，并不适合所有人，初学者在学习过程中，更加希望知道的是执行一个完整的PHP程序流程是怎么样的，调用了什么函数，返回的结果是什么。</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">[</span>root@template ~]# <span class="nb">cd</span> ~/src/
-<span class="o">[</span>root@template src]# wget http://nginx.org/download/nginx-1.8.1.tar.gz</code></pre></figure>
+<h3 id="xdebug">什么是Xdebug？</h3>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>
+<p>Xdebug是一个开放源代码的PHP程序调试器(即一个Debug工具)，可以用来跟踪，调试和分析PHP程序的运行状况。Xdebug现在的最新版本是Xdebug 2.4.0RC4,release日期 2016-01-25，添加了对PHP7的支持。</p>
 
-``` javascript
+<p>读者可以前往<a href="https://xdebug.org/">官网</a>获取最新版本，或者使用<a href="https://github.com/xdebug/xdebug">github</a>下载源码</p>
 
-// 动态加载js 函数
-function loadJS(url, callback, async, id) {
-	var script = document.createElement("script");
-	if (async) script.async = async;//是否异步加载
-	if (id) script.id = id;
-	script.src = url;
-	if (callback) {//加载完毕回调函数
+<h3 id="xdebug-1">为什么要用Xdebug？</h3>
+<p>使用Xdebug的原因有很多，前面已经讲到，新手在学习的过程很难知道一个完整的PHP流程，就是PHP老司机，接手一个新项目时候，也难免会翻车，一个有点历史的项目，前人已经写了很多代码，有些变量是从父类继承过来的，有些是在程序入口处自定义的，还有些直接在模板突然使用的，这往往会让人看得一塌糊涂，这个时候使用死亡输出法可能要死十几次才到模板，死亡输出法不仅难以了解到一个完整的程序流程，还会浪费宝贵的时间。使用了Xdebug可以在入口处打断点，然后单步执行，手动走完整个流程，过程清晰明了，感觉世界都在自己的手中。</p>
 
-		//方法1：IE8及以下不支持addEventListener
-		script.addEventListener("load", function(e) {
-			callback(null, e);
-		}, false);
+<p>笔者认为还有一个重要原因就是Java天生就有单步调试，简单如Ecplice，庞大如IntelliJ IDEA，每次在公司和Java同事一起调试的时候，看着他们傲娇的眼神，对我们PHPer一脸鄙视，绝对不能忍！我们也要有，毕竟PHP才是世界上最好的语言！</p>
 
-		//方法2：兼容IE6/7/8
-		/*
-		if (script.readyState) {
-			script.onreadystatechange = function () {
-				if (script.readyState == "loaded" || script.readyState == "complete") {
-					script.onreadystatechange = null;
-					callback();
-				}
-			};
-		} else {
-			script.onload = function () {
-				callback();
-			};
-		}
-		*/
+<h3 id="phpstormxdebug">PHPStorm调试界面和Xdebug原理</h3>
+<p><img src="/img/20160603-1.png" alt="PHPStorm调试界面" />
+PHPStrom调试界面非常友好，基本和IntelliJ IDEA一样，鼠标悬浮在变量名处可以看到变量的值，左下角是文件执行流程，中间是所有定义了的变量的值，</p>
 
-	}
-	(document.getElementsByTagName("head")[0] || document.getElementsByTagName("body")[0]).appendChild(script);
-}
-
-// 动态加载embed.js,把disqus_username改成你自己的
-loadJS("http://disqus_username.disqus.com/embed.js", function() { /*加载完回调函数*/ }, true, "disqus");
-
-</code></pre>
-</div>
-
-<h3 id="disqus">2. 异步加载Disqus的评论</h3>
-
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code>
-<span class="nx">DISQUS</span><span class="p">.</span><span class="nx">reset</span><span class="p">({</span>
-	<span class="na">reload</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-	<span class="na">config</span><span class="p">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-		<span class="k">this</span><span class="p">.</span><span class="nx">page</span><span class="p">.</span><span class="nx">identifier</span> <span class="o">=</span> <span class="s2">"填写页面的id"</span><span class="p">;</span>
-		<span class="k">this</span><span class="p">.</span><span class="nx">page</span><span class="p">.</span><span class="nx">url</span> <span class="o">=</span> <span class="s2">"填写页面的url"</span><span class="p">;</span>
-		<span class="k">this</span><span class="p">.</span><span class="nx">page</span><span class="p">.</span><span class="nx">title</span> <span class="o">=</span> <span class="s2">"填写页面的标题"</span><span class="p">;</span>
-		<span class="k">this</span><span class="p">.</span><span class="nx">language</span> <span class="o">=</span> <span class="s2">"填写Disqus界面的语言"</span><span class="p">;</span><span class="c1">//中文是zh , 英文是en</span>
-	<span class="p">}</span>
-<span class="p">});</span>
-
-</code></pre>
-</div>
-
-<h3 id="disqus-1">3. 单页应用如何加载Disqus</h3>
-
-<h4 id="section">主要思路：</h4>
-
-<ol>
-  <li>在首次访问有评论的页面时 动态加载embed.js，并且回调DISQUS.reset()。</li>
-  <li>后续访问有评论的页面时直接DISQUS.reset()。</li>
-</ol>
-
-<h4 id="section-1">具体实施：</h4>
-
-<p>具体可参照<a href="https://github.com/bglky/bglky.github.io/blob/master/js/my-app.js">我blog的代码</a></p>
-
-<h3 id="section-2">相关参考</h3>
-<ul>
-  <li><a href="https://help.disqus.com/customer/portal/articles/472107-using-disqus-on-ajax-sites">Using Disqus on AJAX sites</a></li>
-  <li><a href="https://github.com/disqus/DISQUS-API-Recipes/blob/master/snippets/js/disqus-reset/disqus_reset.html"> An example DISQUS.reset recipe</a></li>
-</ul>
-
+<p>未完待续。。。</p>
 
 						</div>
 					</article>
 					<ul class="pager">
-						
-						<li class="previous">
-							<a class="link" href="/2016/06/03/Xdebug.html" title="Ubuntu14.04配置PHPStorm+Xdebug调试PHP代码">&larr; Previous Post</a>
-						</li>
 						 
 						<li class="next">
-							<a class="link" href="/2016/09/09/git.html" title="Ubuntu14.04源码安装最新版本git">Next Post &rarr;</a>
+							<a class="link" href="/2016/07/26/SPA-load-disqus.html" title="单页应用异步加载Disqus评论">Next Post &rarr;</a>
 						</li>
 						
 					</ul>
@@ -316,10 +257,7 @@ loadJS("http://disqus_username.disqus.com/embed.js", function() { /*加载完回
 				<!-- disqus 评论框 end -->
 				<!-- 多说分享 start -->
 				
-				<div class="ds-share flat content-block" data-thread-key="/2016/07/26/SPA-load-disqus" data-title="单页应用异步加载Disqus评论" data-content="1. 动态加载Disqus的embed.js文件
-
-[root@template ~]# cd ~/src/
-[root@template src]# w... | PHP Java Python Linux 数据库什么的都不会 " data-url="http://bglky.me/#!/2016/07/26/SPA-load-disqus.html">
+				<div class="ds-share flat content-block" data-thread-key="/2016/06/03/Xdebug" data-title="Ubuntu14.04配置PHPStorm+Xdebug调试PHP代码" data-content="PHP程序员在开发过程中，普遍使用二分查找法，死亡输出法（笔者随便取的名字）来调试代码，在程序执行的过程中，通过输出特定变量的值可以判断程序执行是否正确，... | PHP Java Python Linux 数据库什么的都不会 " data-url="http://bglky.me/#!/2016/06/03/Xdebug.html">
 				    <div class="ds-share-inline">
 				      <ul  class="ds-share-icons-16">
 				      	
@@ -337,8 +275,8 @@ loadJS("http://disqus_username.disqus.com/embed.js", function() { /*加载完回
 				<!-- 多说分享 end -->
 				<!-- 多说评论框 start -->
 				
-				<div class="comment_duoshuo content-block"  data-thread-key="/2016/07/26/SPA-load-disqus" data-title="单页应用异步加载Disqus评论" data-url="http://bglky.me/#!/2016/07/26/SPA-load-disqus.html">
-					<div class="ds-thread"   data-thread-key="/2016/07/26/SPA-load-disqus" data-title="单页应用异步加载Disqus评论" data-url="http://bglky.me/#!/2016/07/26/SPA-load-disqus.html"></div>
+				<div class="comment_duoshuo content-block"  data-thread-key="/2016/06/03/Xdebug" data-title="Ubuntu14.04配置PHPStorm+Xdebug调试PHP代码" data-url="http://bglky.me/#!/2016/06/03/Xdebug.html">
+					<div class="ds-thread"   data-thread-key="/2016/06/03/Xdebug" data-title="Ubuntu14.04配置PHPStorm+Xdebug调试PHP代码" data-url="http://bglky.me/#!/2016/06/03/Xdebug.html"></div>
 				</div>			
 				
 				<!-- 多说评论框 end -->

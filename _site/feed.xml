@@ -5,13 +5,13 @@
     <description>My Blog / Jekyll Theme , SPA and responsive , based on Framework7 and Jekyll.</description>
     <link>http://bglky.me/</link>
     <atom:link href="http://bglky.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 09 Sep 2016 08:47:48 +0800</pubDate>
-    <lastBuildDate>Fri, 09 Sep 2016 08:47:48 +0800</lastBuildDate>
+    <pubDate>Fri, 09 Sep 2016 17:57:52 +0800</pubDate>
+    <lastBuildDate>Fri, 09 Sep 2016 17:57:52 +0800</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
     
       <item>
-        <title>Ubuntu14.04配置PHPStorm+Xdebug调试PHP代码</title>
-        <description>&lt;p&gt;PHP程序员在开发过程中，普遍使用二分查找法，死亡输出法（笔者随便取的名字）来调试代码，在程序执行的过程中，通过输出特定变量的值可以判断程序执行是否正确，使用一些时间函数常用函数甚至还可以看出效率高低，常用的函数有echo、print_r()、var_dump()、printf()等，对于有较丰富开发经验的老程序员来说这些也已经足够了。这些方法都是在学习PHP过程中总结出来的，并不适合所有人，初学者在学习过程中，更加希望知道的是执行一个完整的PHP程序流程是怎么样的，调用了什么函数，返回的结果是什么。&lt;/p&gt;
+        <title>Ubuntu14.04源码安装最新版本git</title>
+        <description>&lt;p&gt;Ubuntu16.04出来后，整体性能都有了较大提升，但是不少用户还停留在Ubuntu14.04，笔者就是其中一个。Ubuntu14.04自带的软件版本都是比较老，一般可以通过PPA来安装某些新版本的软件，但是PPA不一定是安全的，在下载完之后如果不需要继续使用，请及时删除掉多余的PPA。笔者曾经为了安装&lt;a href=&quot;https://www.deepin.org/&quot;&gt;深度操作系统&lt;/a&gt;音乐软件，添加了深度的PPA源，结果在一次&lt;code class=&quot;highlighter-rouge&quot;&gt;apt-get upgrade&lt;/code&gt;的时候悲剧了。当然，做为一个喜欢折腾的人，必须是源码手动安装才有感觉。&lt;/p&gt;
 
 &lt;h3 id=&quot;xdebug&quot;&gt;什么是Xdebug？&lt;/h3&gt;
 
@@ -30,15 +30,13 @@ PHPStrom调试界面非常友好，基本和IntelliJ IDEA一样，鼠标悬浮�
 
 &lt;p&gt;未完待续。。。&lt;/p&gt;
 </description>
-        <pubDate>Wed, 07 Sep 2016 23:25:07 +0800</pubDate>
-        <link>http://bglky.me/2016/09/07/Xdebug.html</link>
-        <guid isPermaLink="true">http://bglky.me/2016/09/07/Xdebug.html</guid>
+        <pubDate>Fri, 09 Sep 2016 15:25:07 +0800</pubDate>
+        <link>http://bglky.me/2016/09/09/git.html</link>
+        <guid isPermaLink="true">http://bglky.me/2016/09/09/git.html</guid>
         
-        <category>PHP</category>
+        <category>git</category>
         
         <category>Ubuntu</category>
-        
-        <category>Xdebug</category>
         
         
       </item>
@@ -47,7 +45,7 @@ PHPStrom调试界面非常友好，基本和IntelliJ IDEA一样，鼠标悬浮�
         <title>单页应用异步加载Disqus评论</title>
         <description>&lt;h3 id=&quot;disqusembedjs&quot;&gt;1. 动态加载Disqus的embed.js文件&lt;/h3&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sh&quot; data-lang=&quot;sh&quot;&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;root@template ~]# &lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; ~/src/
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;root@template ~]# &lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; ~/src/
 &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;root@template src]# wget http://nginx.org/download/nginx-1.8.1.tar.gz&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
@@ -134,6 +132,40 @@ loadJS(&quot;http://disqus_username.disqus.com/embed.js&quot;, function() { /*�
         <guid isPermaLink="true">http://bglky.me/2016/07/26/SPA-load-disqus.html</guid>
         
         <category>博客</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Ubuntu14.04配置PHPStorm+Xdebug调试PHP代码</title>
+        <description>&lt;p&gt;PHP程序员在开发过程中，普遍使用二分查找法，死亡输出法（笔者随便取的名字）来调试代码，在程序执行的过程中，通过输出特定变量的值可以判断程序执行是否正确，使用一些时间函数常用函数甚至还可以看出效率高低，常用的函数有echo、print_r()、var_dump()、printf()等，对于有较丰富开发经验的老程序员来说这些也已经足够了。这些方法都是在学习PHP过程中总结出来的，并不适合所有人，初学者在学习过程中，更加希望知道的是执行一个完整的PHP程序流程是怎么样的，调用了什么函数，返回的结果是什么。&lt;/p&gt;
+
+&lt;h3 id=&quot;xdebug&quot;&gt;什么是Xdebug？&lt;/h3&gt;
+
+&lt;p&gt;Xdebug是一个开放源代码的PHP程序调试器(即一个Debug工具)，可以用来跟踪，调试和分析PHP程序的运行状况。Xdebug现在的最新版本是Xdebug 2.4.0RC4,release日期 2016-01-25，添加了对PHP7的支持。&lt;/p&gt;
+
+&lt;p&gt;读者可以前往&lt;a href=&quot;https://xdebug.org/&quot;&gt;官网&lt;/a&gt;获取最新版本，或者使用&lt;a href=&quot;https://github.com/xdebug/xdebug&quot;&gt;github&lt;/a&gt;下载源码&lt;/p&gt;
+
+&lt;h3 id=&quot;xdebug-1&quot;&gt;为什么要用Xdebug？&lt;/h3&gt;
+&lt;p&gt;使用Xdebug的原因有很多，前面已经讲到，新手在学习的过程很难知道一个完整的PHP流程，就是PHP老司机，接手一个新项目时候，也难免会翻车，一个有点历史的项目，前人已经写了很多代码，有些变量是从父类继承过来的，有些是在程序入口处自定义的，还有些直接在模板突然使用的，这往往会让人看得一塌糊涂，这个时候使用死亡输出法可能要死十几次才到模板，死亡输出法不仅难以了解到一个完整的程序流程，还会浪费宝贵的时间。使用了Xdebug可以在入口处打断点，然后单步执行，手动走完整个流程，过程清晰明了，感觉世界都在自己的手中。&lt;/p&gt;
+
+&lt;p&gt;笔者认为还有一个重要原因就是Java天生就有单步调试，简单如Ecplice，庞大如IntelliJ IDEA，每次在公司和Java同事一起调试的时候，看着他们傲娇的眼神，对我们PHPer一脸鄙视，绝对不能忍！我们也要有，毕竟PHP才是世界上最好的语言！&lt;/p&gt;
+
+&lt;h3 id=&quot;phpstormxdebug&quot;&gt;PHPStorm调试界面和Xdebug原理&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/img/20160603-1.png&quot; alt=&quot;PHPStorm调试界面&quot; /&gt;
+PHPStrom调试界面非常友好，基本和IntelliJ IDEA一样，鼠标悬浮在变量名处可以看到变量的值，左下角是文件执行流程，中间是所有定义了的变量的值，&lt;/p&gt;
+
+&lt;p&gt;未完待续。。。&lt;/p&gt;
+</description>
+        <pubDate>Fri, 03 Jun 2016 23:25:07 +0800</pubDate>
+        <link>http://bglky.me/2016/06/03/Xdebug.html</link>
+        <guid isPermaLink="true">http://bglky.me/2016/06/03/Xdebug.html</guid>
+        
+        <category>PHP</category>
+        
+        <category>Ubuntu</category>
+        
+        <category>Xdebug</category>
         
         
       </item>
